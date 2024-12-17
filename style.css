@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    font-family: Poppins;
+    background-color: black;
+    margin: 0;
+    padding:0;
+}
+
+nav{
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    background: linear-gradient(to right, black, rgba(0, 0, 0, 0));
+    z-index: 100;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul a{
+    color: whitesmoke;
+    text-decoration: none;
+    margin-right: 2em;
+}
+
+#carousel{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#large_items{
+    height: 100%;
+    width: 100%;
+}
+
+#large_items img{
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+}
+
+#carousel .item{
+    position: relative;
+}
+
+#carousel .item .info{
+    position: absolute;
+    top: 20%;
+    max-width: 60%;
+    left: 10%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: whitesmoke;
+    padding: 20px; 
+}
+
+#carousel .item .info *{
+    margin: 10px 0px;
+}
+
+.buttons button{
+    font-size: 1em;
+    padding: 10px;
+}
+
+.buttons button:first-child{
+    border: solid 2px whitesmoke;
+    background-color:whitesmoke;
+}
+.buttons button:first-child:hover{
+    background: none;
+    color: whitesmoke;
+    border: solid 2px whitesmoke;
+}
+
+.buttons button:nth-child(2){
+    background: none;
+    color: whitesmoke;
+    border: solid 2px whitesmoke;
+}
+
+.buttons button:nth-child(2):hover{
+    border: solid 2px whitesmoke;
+    background-color:whitesmoke;
+    color: black
+}
+
+#small_carousel{
+    height: 225px;
+    width: fit-content;
+    bottom: 20px;
+    right: 0px;
+    background: linear-gradient(to left, black, rgba(0, 0, 0, 0));
+    max-width: 90%;
+    position: absolute;
+    display: flex;
+    align-items: center; 
+    justify-content: right;
+}
+
+#small_carousel .small_item{
+    margin: 5px;
+    height: 90%;
+    width: 150px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#small_carousel .small_item img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+
+.arrow_buttons button{
+    margin: 5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%; 
+    border: white 2px solid;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 1.1em;
+}
+
+.arrow_buttons button:hover{
+    margin: 5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%; 
+    border: none;
+    background-color: white;
+    color: black;
+    font-size: 1.1em;
+}
+
+
+
+/* animations */
+#carousel #large_items .item:nth-child(1) .info,
+#carousel #large_items .item:nth-child(1) h1,
+#carousel #large_items .item:nth-child(1) h3,
+#carousel #large_items .item:nth-child(1) p,
+#carousel #large_items .item:nth-child(1) .buttons{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 1s linear 1 forwards;
+}
+
+@keyframes showContent {
+    to{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+#carousel #large_items .item:nth-child(1) .info{
+    animation-delay: 1.3s;
+}
+#carousel #large_items .item:nth-child(1) h1,
+#carousel #large_items .item:nth-child(1) h3,
+#carousel #large_items .item:nth-child(1) p{
+    animation-delay: 1.5s;
+}
+#carousel #large_items .item:nth-child(1) .buttons{
+    animation-delay: 1.7s;
+}
+
